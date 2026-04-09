@@ -1,0 +1,83 @@
+@use './variables.scss' as *;
+
+// ========================================
+// WIDTH & HEIGHT - كلاسات الأبعاد
+// ========================================
+
+// Width
+@each $key, $value in $sizes {
+  .w-#{$key} {
+    width: #{$value} !important;
+  }
+}
+
+// Min Width
+@each $key, $value in $sizes {
+  .min-w-#{$key} {
+    min-width: #{$value} !important;
+  }
+}
+
+// Max Width
+@each $key, $value in $sizes {
+  .max-w-#{$key} {
+    max-width: #{$value} !important;
+  }
+}
+
+// Height
+@each $key, $value in $sizes {
+  .h-#{$key} {
+    height: #{$value} !important;
+  }
+}
+
+// Min Height
+@each $key, $value in $sizes {
+  .min-h-#{$key} {
+    min-height: #{$value} !important;
+  }
+}
+
+// Max Height
+@each $key, $value in $sizes {
+  .max-h-#{$key} {
+    max-height: #{$value} !important;
+  }
+}
+
+// Size (Width & Height together)
+@each $key, $value in $sizes {
+  .size-#{$key} {
+    width: #{$value} !important;
+    height: #{$value} !important;
+  }
+}
+
+// ========================================
+// RESPONSIVE SIZING
+// ========================================
+
+@each $bp, $size in $breakpoints {
+  @media (max-width: #{$size}) {
+    // Width
+    @each $key, $value in $sizes {
+      .#{$bp}__w-#{$key} {
+        width: #{$value} !important;
+      }
+      .#{$bp}__h-#{$key} {
+        height: #{$value} !important;
+      }
+      .#{$bp}__min-w-#{$key} {
+        min-width: #{$value} !important;
+      }
+      .#{$bp}__max-w-#{$key} {
+        max-width: #{$value} !important;
+      }
+      .#{$bp}__size-#{$key} {
+        width: #{$value} !important;
+        height: #{$value} !important;
+      }
+    }
+  }
+}

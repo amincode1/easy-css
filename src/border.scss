@@ -1,0 +1,165 @@
+@use './variables.scss' as *;
+
+// ========================================
+// BORDER - كلاسات الحدود
+// ========================================
+
+// Border Radius
+@each $key, $value in $border-radius {
+  .rounded-#{$key} {
+    border-radius: #{$value} !important;
+  }
+}
+
+// Border Radius لكل جهة على حدة
+.rounded-t {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.rounded-r {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+.rounded-b {
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.rounded-l {
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+// Border Width
+.border {
+  border: 1px solid #e5e7eb !important;
+}
+.border-2 {
+  border: 2px solid #e5e7eb !important;
+}
+.border-3 {
+  border: 3px solid #e5e7eb !important;
+}
+.border-0 {
+  border: 0 !important;
+}
+
+// Border لكل جهة
+.border-t {
+  border-top: 1px solid #e5e7eb !important;
+}
+.border-r {
+  border-right: 1px solid #e5e7eb !important;
+}
+.border-b {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+.border-l {
+  border-left: 1px solid #e5e7eb !important;
+}
+
+.border-t-2 {
+  border-top: 2px solid #e5e7eb !important;
+}
+.border-r-2 {
+  border-right: 2px solid #e5e7eb !important;
+}
+.border-b-2 {
+  border-bottom: 2px solid #e5e7eb !important;
+}
+.border-l-2 {
+  border-left: 2px solid #e5e7eb !important;
+}
+
+.border-t-0 {
+  border-top: 0 !important;
+}
+.border-r-0 {
+  border-right: 0 !important;
+}
+.border-b-0 {
+  border-bottom: 0 !important;
+}
+.border-l-0 {
+  border-left: 0 !important;
+}
+
+// Border Colors
+@each $name, $color in $colors {
+  .border-#{$name} {
+    border-color: #{$color} !important;
+  }
+  
+  .border-t-#{$name} {
+    border-top-color: #{$color} !important;
+  }
+  .border-r-#{$name} {
+    border-right-color: #{$color} !important;
+  }
+  .border-b-#{$name} {
+    border-bottom-color: #{$color} !important;
+  }
+  .border-l-#{$name} {
+    border-left-color: #{$color} !important;
+  }
+}
+
+// Border Style
+.border-solid {
+  border-style: solid !important;
+}
+.border-dashed {
+  border-style: dashed !important;
+}
+.border-dotted {
+  border-style: dotted !important;
+}
+.border-none {
+  border-style: none !important;
+}
+
+// ========================================
+// RESPONSIVE BORDER
+// ========================================
+
+@each $bp, $size in $breakpoints {
+  @media (max-width: #{$size}) {
+    // Border Radius
+    @each $key, $value in $border-radius {
+      .#{$bp}__rounded-#{$key} {
+        border-radius: #{$value} !important;
+      }
+    }
+    
+    // Border Width
+    .#{$bp}__border {
+      border: 1px solid #e5e7eb !important;
+    }
+    .#{$bp}__border-2 {
+      border: 2px solid #e5e7eb !important;
+    }
+    .#{$bp}__border-0 {
+      border: 0 !important;
+    }
+    
+    // Border Sides
+    .#{$bp}__border-t {
+      border-top: 1px solid #e5e7eb !important;
+    }
+    .#{$bp}__border-r {
+      border-right: 1px solid #e5e7eb !important;
+    }
+    .#{$bp}__border-b {
+      border-bottom: 1px solid #e5e7eb !important;
+    }
+    .#{$bp}__border-l {
+      border-left: 1px solid #e5e7eb !important;
+    }
+    
+    // Border Colors
+    @each $name, $color in $colors {
+      .#{$bp}__border-#{$name} {
+        border-color: #{$color} !important;
+      }
+    }
+  }
+}

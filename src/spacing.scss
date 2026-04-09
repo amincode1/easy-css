@@ -1,0 +1,168 @@
+@use './variables.scss' as *;
+
+// ========================================
+// MARGIN & PADDING - مسافات متسقة
+// ========================================
+
+// توليد كلاسات المسافات
+@each $key, $value in $spacing {
+  // Margin - جميع الجهات
+  .m-#{$key} {
+    margin: #{$value} !important;
+  }
+  // Margin - كل جهة على حدة
+  .mt-#{$key} {
+    margin-top: #{$value} !important;
+  }
+  .mb-#{$key} {
+    margin-bottom: #{$value} !important;
+  }
+  .ml-#{$key} {
+    margin-left: #{$value} !important;
+  }
+  .mr-#{$key} {
+    margin-right: #{$value} !important;
+  }
+  // Margin - أفقي وعمودي
+  .mx-#{$key} {
+    margin-left: #{$value} !important;
+    margin-right: #{$value} !important;
+  }
+  .my-#{$key} {
+    margin-top: #{$value} !important;
+    margin-bottom: #{$value} !important;
+  }
+
+  // Padding - جميع الجهات
+  .p-#{$key} {
+    padding: #{$value} !important;
+  }
+  // Padding - كل جهة على حدة
+  .pt-#{$key} {
+    padding-top: #{$value} !important;
+  }
+  .pb-#{$key} {
+    padding-bottom: #{$value} !important;
+  }
+  .pl-#{$key} {
+    padding-left: #{$value} !important;
+  }
+  .pr-#{$key} {
+    padding-right: #{$value} !important;
+  }
+  // Padding - أفقي وعمودي
+  .px-#{$key} {
+    padding-left: #{$value} !important;
+    padding-right: #{$value} !important;
+  }
+  .py-#{$key} {
+    padding-top: #{$value} !important;
+    padding-bottom: #{$value} !important;
+  }
+}
+
+// كلاسات خاصة
+.m-auto {
+  margin: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+// ========================================
+// RESPONSIVE SPACING
+// ========================================
+
+@each $bp, $size in $breakpoints {
+  @media (max-width: #{$size}) {
+    @each $key, $value in $spacing {
+      // Margin
+      .#{$bp}__m-#{$key} {
+        margin: #{$value} !important;
+      }
+      .#{$bp}__mt-#{$key} {
+        margin-top: #{$value} !important;
+      }
+      .#{$bp}__mb-#{$key} {
+        margin-bottom: #{$value} !important;
+      }
+      .#{$bp}__ml-#{$key} {
+        margin-left: #{$value} !important;
+      }
+      .#{$bp}__mr-#{$key} {
+        margin-right: #{$value} !important;
+      }
+      .#{$bp}__mx-#{$key} {
+        margin-left: #{$value} !important;
+        margin-right: #{$value} !important;
+      }
+      .#{$bp}__my-#{$key} {
+        margin-top: #{$value} !important;
+        margin-bottom: #{$value} !important;
+      }
+
+      // Padding
+      .#{$bp}__p-#{$key} {
+        padding: #{$value} !important;
+      }
+      .#{$bp}__pt-#{$key} {
+        padding-top: #{$value} !important;
+      }
+      .#{$bp}__pb-#{$key} {
+        padding-bottom: #{$value} !important;
+      }
+      .#{$bp}__pl-#{$key} {
+        padding-left: #{$value} !important;
+      }
+      .#{$bp}__pr-#{$key} {
+        padding-right: #{$value} !important;
+      }
+      .#{$bp}__px-#{$key} {
+        padding-left: #{$value} !important;
+        padding-right: #{$value} !important;
+      }
+      .#{$bp}__py-#{$key} {
+        padding-top: #{$value} !important;
+        padding-bottom: #{$value} !important;
+      }
+    }
+
+    // Responsive auto classes
+    .#{$bp}__m-auto {
+      margin: auto !important;
+    }
+    .#{$bp}__mx-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .#{$bp}__ml-auto {
+      margin-left: auto !important;
+    }
+    .#{$bp}__mr-auto {
+      margin-right: auto !important;
+    }
+  }
+}

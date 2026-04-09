@@ -1,0 +1,262 @@
+@use './variables.scss' as *;
+
+// ========================================
+// UTILITIES - كلاسات مساعدة متنوعة
+// ========================================
+
+// Display
+.block {
+  display: block !important;
+}
+.inline-block {
+  display: inline-block !important;
+}
+.inline {
+  display: inline !important;
+}
+.hidden {
+  display: none !important;
+}
+
+// Position
+.relative {
+  position: relative !important;
+}
+.absolute {
+  position: absolute !important;
+}
+.fixed {
+  position: fixed !important;
+}
+.sticky {
+  position: sticky !important;
+}
+.static {
+  position: static !important;
+}
+
+// Position offsets
+@each $key, $value in $spacing {
+  .top-#{$key} {
+    top: #{$value} !important;
+  }
+  .right-#{$key} {
+    right: #{$value} !important;
+  }
+  .bottom-#{$key} {
+    bottom: #{$value} !important;
+  }
+  .left-#{$key} {
+    left: #{$value} !important;
+  }
+}
+
+.top-auto {
+  top: auto !important;
+}
+.right-auto {
+  right: auto !important;
+}
+.bottom-auto {
+  bottom: auto !important;
+}
+.left-auto {
+  left: auto !important;
+}
+
+.inset-0 {
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+// Z-Index
+@each $key, $value in $z-index {
+  .z-#{$key} {
+    z-index: #{$value} !important;
+  }
+}
+
+// Opacity
+@each $key, $value in $opacity {
+  .opacity-#{$key} {
+    opacity: #{$value} !important;
+  }
+}
+
+// Box Shadow
+@each $key, $value in $shadows {
+  .shadow-#{$key} {
+    box-shadow: #{$value} !important;
+  }
+}
+
+// Overflow
+.overflow-auto {
+  overflow: auto !important;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.overflow-visible {
+  overflow: visible !important;
+}
+.overflow-scroll {
+  overflow: scroll !important;
+}
+.overflow-x-auto {
+  overflow-x: auto !important;
+}
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+.overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+
+// Cursor
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.cursor-default {
+  cursor: default !important;
+}
+.cursor-wait {
+  cursor: wait !important;
+}
+.cursor-move {
+  cursor: move !important;
+}
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+// Pointer Events
+.pointer-events-none {
+  pointer-events: none !important;
+}
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+// User Select
+.select-none {
+  user-select: none !important;
+}
+.select-text {
+  user-select: text !important;
+}
+.select-all {
+  user-select: all !important;
+}
+.select-auto {
+  user-select: auto !important;
+}
+
+// Background
+.bg-white {
+  background-color: #ffffff !important;
+}
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: #{$color} !important;
+  }
+}
+
+// Sticky with background
+.sticky-top {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: #ffffff !important;
+  z-index: 10 !important;
+}
+.sticky-bottom {
+  position: sticky !important;
+  bottom: 0 !important;
+  background-color: #ffffff !important;
+  z-index: 10 !important;
+}
+
+// Active states
+.active-primary {
+  color: var(--primary-color, #3b82f6) !important;
+  border-bottom: 1px solid var(--primary-color, #3b82f6) !important;
+}
+
+// Hover effects
+.hover-opacity {
+  transition: opacity 0.2s ease !important;
+  
+  &:hover {
+    opacity: 0.7 !important;
+  }
+}
+.hover-cursor-pointer {
+  &:hover {
+    cursor: pointer !important;
+  }
+}
+.hover-red {
+  &:hover {
+    color: #ef4444 !important;
+  }
+}
+.hover-outline {
+  &:hover {
+    outline: 1px solid var(--primary-color, #3b82f6) !important;
+  }
+}
+
+// Disabled
+.disabled {
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+}
+
+// Visibility
+.visible {
+  visibility: visible !important;
+}
+.invisible {
+  visibility: hidden !important;
+}
+
+// ========================================
+// RESPONSIVE UTILITIES
+// ========================================
+
+@each $bp, $size in $breakpoints {
+  @media (max-width: #{$size}) {
+    .#{$bp}__hidden {
+      display: none !important;
+    }
+    .#{$bp}__block {
+      display: block !important;
+    }
+    .#{$bp}__flex {
+      display: flex !important;
+    }
+    .#{$bp}__grid {
+      display: grid !important;
+    }
+    
+    .#{$bp}__relative {
+      position: relative !important;
+    }
+    .#{$bp}__absolute {
+      position: absolute !important;
+    }
+    .#{$bp}__sticky-top {
+      position: sticky !important;
+      top: 0 !important;
+    }
+  }
+}

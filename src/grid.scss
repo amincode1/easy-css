@@ -1,0 +1,197 @@
+@use './variables.scss' as *;
+
+// ========================================
+// GRID - كلاسات الشبكة
+// ========================================
+
+.grid {
+  display: grid !important;
+}
+
+// Grid Template Columns
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr) !important;
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+.grid-cols-5 {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, 1fr) !important;
+}
+.grid-cols-12 {
+  grid-template-columns: repeat(12, 1fr) !important;
+}
+.grid-cols-none {
+  grid-template-columns: none !important;
+}
+
+// Auto fit columns
+.grid-cols-auto-100 {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+}
+.grid-cols-auto-150 {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+}
+.grid-cols-auto-200 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+}
+.grid-cols-auto-250 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+}
+.grid-cols-auto-300 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+}
+
+// Grid Template Rows
+.grid-rows-1 {
+  grid-template-rows: repeat(1, 1fr) !important;
+}
+.grid-rows-2 {
+  grid-template-rows: repeat(2, 1fr) !important;
+}
+.grid-rows-3 {
+  grid-template-rows: repeat(3, 1fr) !important;
+}
+.grid-rows-4 {
+  grid-template-rows: repeat(4, 1fr) !important;
+}
+
+// Grid Column Span
+.col-span-1 {
+  grid-column: span 1 / span 1 !important;
+}
+.col-span-2 {
+  grid-column: span 2 / span 2 !important;
+}
+.col-span-3 {
+  grid-column: span 3 / span 3 !important;
+}
+.col-span-4 {
+  grid-column: span 4 / span 4 !important;
+}
+.col-span-5 {
+  grid-column: span 5 / span 5 !important;
+}
+.col-span-6 {
+  grid-column: span 6 / span 6 !important;
+}
+.col-span-7 {
+  grid-column: span 7 / span 7 !important;
+}
+.col-span-8 {
+  grid-column: span 8 / span 8 !important;
+}
+.col-span-9 {
+  grid-column: span 9 / span 9 !important;
+}
+.col-span-10 {
+  grid-column: span 10 / span 10 !important;
+}
+.col-span-11 {
+  grid-column: span 11 / span 11 !important;
+}
+.col-span-12 {
+  grid-column: span 12 / span 12 !important;
+}
+.col-span-full {
+  grid-column: 1 / -1 !important;
+}
+
+// Grid Row Span
+.row-span-1 {
+  grid-row: span 1 / span 1 !important;
+}
+.row-span-2 {
+  grid-row: span 2 / span 2 !important;
+}
+.row-span-3 {
+  grid-row: span 3 / span 3 !important;
+}
+.row-span-4 {
+  grid-row: span 4 / span 4 !important;
+}
+
+// Grid Gap
+@each $key, $value in $spacing {
+  .gap-#{$key} {
+    gap: #{$value} !important;
+  }
+}
+
+// Justify Items
+.justify-items-start {
+  justify-items: start !important;
+}
+.justify-items-end {
+  justify-items: end !important;
+}
+.justify-items-center {
+  justify-items: center !important;
+}
+.justify-items-stretch {
+  justify-items: stretch !important;
+}
+
+// Align Items
+.align-items-start {
+  align-items: start !important;
+}
+.align-items-end {
+  align-items: end !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+// ========================================
+// RESPONSIVE GRID
+// ========================================
+
+@each $bp, $size in $breakpoints {
+  @media (max-width: #{$size}) {
+    .#{$bp}__grid {
+      display: grid !important;
+    }
+    
+    .#{$bp}__grid-cols-1 {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .#{$bp}__grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .#{$bp}__grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .#{$bp}__grid-cols-4 {
+      grid-template-columns: repeat(4, 1fr) !important;
+    }
+    
+    .#{$bp}__col-span-2 {
+      grid-column: span 2 / span 2 !important;
+    }
+    .#{$bp}__col-span-3 {
+      grid-column: span 3 / span 3 !important;
+    }
+    .#{$bp}__col-span-full {
+      grid-column: 1 / -1 !important;
+    }
+    
+    @each $key, $value in $spacing {
+      .#{$bp}__gap-#{$key} {
+        gap: #{$value} !important;
+      }
+    }
+  }
+}

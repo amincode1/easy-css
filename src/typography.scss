@@ -1,0 +1,131 @@
+@use './variables.scss' as *;
+
+// ========================================
+// TYPOGRAPHY - كلاسات النصوص
+// ========================================
+
+// Font Size
+@each $key, $value in $font-sizes {
+  .text-#{$key} {
+    font-size: #{$value} !important;
+  }
+}
+
+// Font Weight
+@each $key, $value in $font-weights {
+  .font-#{$key} {
+    font-weight: #{$value} !important;
+  }
+}
+
+// Text Align
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+
+// Text Transform
+.uppercase {
+  text-transform: uppercase !important;
+}
+.lowercase {
+  text-transform: lowercase !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+.normal-case {
+  text-transform: none !important;
+}
+
+// Text Decoration
+.underline {
+  text-decoration: underline !important;
+}
+.no-underline {
+  text-decoration: none !important;
+}
+.line-through {
+  text-decoration: line-through !important;
+}
+
+// Text Wrap
+.text-wrap {
+  text-wrap: wrap !important;
+}
+.text-nowrap {
+  text-wrap: nowrap !important;
+}
+.truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// Line Clamp
+.line-clamp-1 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1 !important;
+  line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+.line-clamp-2 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+.line-clamp-3 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+.line-clamp-4 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+// ========================================
+// RESPONSIVE TYPOGRAPHY
+// ========================================
+
+@each $bp, $size in $breakpoints {
+  @media (max-width: #{$size}) {
+    // Font Size
+    @each $key, $value in $font-sizes {
+      .#{$bp}__text-#{$key} {
+        font-size: #{$value} !important;
+      }
+    }
+    
+    // Font Weight
+    @each $key, $value in $font-weights {
+      .#{$bp}__font-#{$key} {
+        font-weight: #{$value} !important;
+      }
+    }
+    
+    // Text Align
+    .#{$bp}__text-left {
+      text-align: left !important;
+    }
+    .#{$bp}__text-center {
+      text-align: center !important;
+    }
+    .#{$bp}__text-right {
+      text-align: right !important;
+    }
+  }
+}

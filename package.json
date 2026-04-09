@@ -1,0 +1,21 @@
+{
+  "name": "easy-css",
+  "version": "1.0.0",
+  "description": "A lightweight SCSS-based utility-first CSS library.",
+  "main": "src/index.scss",
+  "scripts": {
+    "build": "sass src/index.scss dist/easy-css.css --style compressed",
+    "watch": "sass src/index.scss dist/easy-css.css --watch"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "utility",
+    "framework"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}

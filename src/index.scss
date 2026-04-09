@@ -1,0 +1,28 @@
+// ========================================
+// UTILITY CLASSES LIBRARY
+// مكتبة كلاسات مساعدة متكاملة
+// ========================================
+
+// المتغيرات الأساسية
+@use './variables.scss';
+
+// كلاسات المسافات (Margin & Padding)
+@use './spacing.scss';
+
+// كلاسات المرن (Flexbox)
+@use './flex.scss';
+
+// كلاسات الشبكة (Grid)
+@use './grid.scss';
+
+// كلاسات الأبعاد (Width & Height)
+@use './width-height.scss';
+
+// كلاسات النصوص (Typography)
+@use './typography.scss';
+
+// كلاسات الحدود (Border)
+@use './border.scss';
+
+// كلاسات مساعدة (Utilities)
+@use './utilities.scss';
