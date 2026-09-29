@@ -1,159 +1,115 @@
-# Easy CSS 🚀
+# Easy CSS
 
-**Easy CSS** is a lightweight, SCSS-based utility-first CSS library designed for rapid UI development with a focus on simplicity and responsiveness.
+مكتبة كلاسات CSS مساعدة مبنية بـ SCSS، تتضمن أدوات للمسافات والتخطيط والأبعاد والنصوص والألوان والحدود، مع كلاسات متجاوبة.
 
-**Easy CSS** هي مكتبة CSS مساعدة خفيفة الوزن تعتمد على SCSS، مصممة لتطوير واجهات المستخدم بسرعة مع التركيز على البساطة والاستجابة (Responsiveness).
+للدليل التفصيلي وقائمة الكلاسات والقيم المدعومة، راجع [DOCUMENTATION.md](./DOCUMENTATION.md).
 
----
-
-## 🌟 Features / المميزات
-
-- 🚀 **Lightweight & Fast**: Only include what you need.
-- 📱 **Fully Responsive**: Easy-to-use responsive modifiers.
-- 🎨 **Customizable**: Built with SCSS variables for easy branding.
-- 🛠️ **Utility-First**: Similar to Tailwind but simpler and SCSS-based.
-- 🇸🇦 **Arabic Support**: Arabic comments and documentation support.
-
----
-
-## 🛠️ Installation / التثبيت
-
-To use Easy CSS in your project, simply import the main SCSS file:
-
-لاستخدام Easy CSS في مشروعك، ببساطة قم باستيراد ملف SCSS الرئيسي:
-
-```scss
-@import "path/to/easy-css/src/index.scss";
-```
-
----
-
-## 📖 Usage / طريقة الاستخدام
-
-### 1. Spacing (Margin & Padding) / المسافات
-
-Use `m-{size}` for margin and `p-{size}` for padding.
-
-استخدم `m-{size}` للهوامش الخارجية و `p-{size}` للهوامش الداخلية.
-
-- **Directions**: `t` (top), `b` (bottom), `l` (left), `r` (right), `x` (horizontal), `y` (vertical).
-- **Example**: `.m-4`, `.pt-2`, `.mx-auto`, `.py-6`.
-
-### 2. Flexbox / المرن
-
-Easily create flexible layouts.
-
-إنشاء تخطيطات مرنة بسهولة.
-
-- **Classes**: `.flex`, `.flex-col`, `.justify-center`, `.items-center`, `.gap-4`.
-- **Example**:
-
-```html
-<div class="flex justify-between items-center gap-4">
-  <div>Item 1</div>
-  <div>Item 2</div>
-</div>
-```
-
-### 3. Grid / الشبكة
-
-Powerful grid system.
-
-نظام شبكة قوي.
-
-- **Classes**: `.grid`, `.grid-cols-3`, `.gap-4`, `.col-span-2`.
-- **Example**:
-
-```html
-<div class="grid grid-cols-3 gap-4">
-  <div class="col-span-2">Main Content</div>
-  <div>Sidebar</div>
-</div>
-```
-
-### 4. Typography / النصوص
-
-Control text size, weight, and alignment.
-
-التحكم في حجم النص، وزنه، ومحاذاته.
-
-- **Classes**: `.text-16`, `.font-bold`, `.text-center`, `.uppercase`.
-- **Example**: `<h1 class="text-32 font-bold text-primary">Hello World</h1>`
-
-### 5. Borders / الحدود
-
-Customize borders and border radius.
-
-تخصيص الحدود ونصف قطر الحواف.
-
-- **Classes**: `.border`, `.border-2`, `.rounded-8`, `.border-primary`.
-- **Example**: `<div class="border border-gray-200 rounded-8 p-4">Content</div>`
-
-### 6. Utilities / مساعدات متنوعة
-
-Additional helper classes for common tasks.
-
-كلاسات مساعدة إضافية للمهام الشائعة.
-
-- **Classes**: `.shadow-md`, `.opacity-50`, `.cursor-pointer`, `.bg-light`.
-- **Example**: `<button class="bg-primary text-white p-2 rounded-4 cursor-pointer shadow-sm">Click Me</button>`
-
----
-
-## 📱 Responsiveness / الاستجابة
-
-Easy CSS uses a simple prefix system for responsive design: `{breakpoint}__class`.
-
-تستخدم Easy CSS نظام بادئة بسيط للتصميم المستجيب: `{breakpoint}__class`.
-
-- **Breakpoints**: `sm`, `md`, `lg`, `xl`, `xxl`.
-- **Example**: `.md__flex-row`, `.sm__text-14`, `.lg__p-10`.
-
-> [!IMPORTANT]
-> Note the double underscore `__` between the breakpoint and the class name.
-> تنبيه: لاحظ استخدام الشرطة السفلية المزدوجة `__` بين نقطة التوقف واسم الكلاس.
-
----
-
-## 🎨 Customization / التخصيص
-
-You can customize the design tokens by modifying `src/variables.scss`.
-
-يمكنك تخصيص رموز التصميم من خلال تعديل ملف `src/variables.scss`.
-
----
-
-## 🏗️ Build / البناء
-
-To compile the SCSS files into a single CSS file, you can use the `sass` compiler.
-
-لتحويل ملفات SCSS إلى ملف CSS واحد، يمكنك استخدام مترجم `sass`.
-
-### Using Sass CLI / استخدام Sass CLI
+## التثبيت
 
 ```bash
-# Install sass if you haven't already
-# npm install -g sass
-
-# Compile the library
-sass src/index.scss dist/easy-css.css --style compressed
+npm install easy-css
 ```
 
-### Using NPM Scripts / استخدام NPM Scripts
+## الاستخدام في Nuxt
 
-If you have a `package.json` file, you can add the following script:
+أضف مدخل SCSS إلى `css` في `nuxt.config.ts`:
 
-إذا كان لديك ملف `package.json` يمكنك إضافة السكريبت التالي:
-
-```json
-"scripts": {
-  "build": "sass src/index.scss dist/easy-css.css --style compressed",
-  "watch": "sass src/index.scss dist/easy-css.css --watch"
-}
+```ts
+export default defineNuxtConfig({
+  css: ['easy-css/src/index.scss'],
+})
 ```
 
----
+يتطلب ذلك أن يدعم مشروع Nuxt ترجمة SCSS؛ ثبّت `sass` في التطبيق إذا لم يكن موجودًا:
 
-## 📄 License / الترخيص
+```bash
+npm install -D sass
+```
 
-MIT License.
+ثم استخدم الكلاسات في القوالب:
+
+```html
+<section class="grid grid-cols-3 gap-16 sm__grid-cols-1">
+  <article class="p-20 rounded-12 bg-primary text-white">محتوى</article>
+</section>
+```
+
+البادئة المتجاوبة `sm__` و`md__` وغيرها تطبق قواعدها حتى عرض نقطة التوقف المحددة (max-width). نقاط التوقف الافتراضية: `sm` 640px، `md` 768px، `lg` 1024px، `xl` 1280px، `xxl` 1536px.
+
+## تخصيص قيم SCSS
+
+أنشئ ملفًا محليًا مثل `assets/scss/easy-css.scss`، وهيّئ المتغيرات قبل استيراد المدخل الشامل:
+
+```scss
+@use 'easy-css/src/variables' with (
+  $colors: (
+    'transparent': transparent,
+    'current': currentColor,
+    'white': #fff,
+    'black': #000,
+    'primary': #6750a4,
+    'secondary': #64748b,
+    'success': #00b342,
+    'danger': #df1c1c,
+    'warning': #ad6d00,
+    'info': #0ea5e9,
+    'dark': #1e293b,
+    'light': #f8fafc,
+    'gray': #9ca3af,
+    'gray-100': #f3f4f6,
+    'gray-200': #e5e7eb,
+    'gray-300': #d1d5db,
+    'gray-400': #9ca3af,
+    'gray-500': #6b7280,
+    'gray-600': #4b5563,
+    'gray-700': #374151,
+    'gray-800': #1f2937,
+    'gray-900': #111827
+  )
+);
+
+@use 'easy-css/src/index';
+```
+
+بعدها أضف الملف المخصص إلى `css` بدلًا من استيراد المكتبة مباشرة:
+
+```ts
+export default defineNuxtConfig({
+  css: ['~/assets/scss/easy-css.scss'],
+})
+```
+
+المتغيرات التي يمكن تهيئتها تشمل نقاط التوقف والمسافات والأحجام والألوان وأحجام وأوزان الخطوط وأنصاف الأقطار والظلال وطبقات z-index والشفافية. عند تخصيص خريطة مثل `$colors` يجب تمرير الخريطة كاملة.
+
+## استخدام CSS الجاهز
+
+إذا لم ترغب بترجمة SCSS أو تخصيص القيم، استورد CSS المبني:
+
+```ts
+export default defineNuxtConfig({
+  css: ['easy-css/dist/easy-css.css'],
+})
+```
+
+## البناء من المصدر
+
+```bash
+npm install
+npm run build
+```
+
+ينتج البناء `dist/easy-css.css`. ملفات SCSS المصدرية مضمنة في الحزمة المنشورة لدعم التخصيص.
+
+## أمثلة الكلاسات
+
+- المسافات: `m-10`, `p-20`, `mx-auto`, `sm__p-10`
+- Flexbox: `flex`, `flex-col`, `items-center`, `justify-between`, `gap-10`
+- Grid: `grid`, `grid-cols-3`, `col-span-2`, `sm__grid-cols-1`
+- الأبعاد: `w-full`, `h-screen`, `max-w-600`, `size-50`
+- النصوص والألوان: `text-16`, `font-bold`, `text-primary`, `text-center`
+- الحدود: `border`, `border-gray-200`, `rounded-12`
+- المساعدات: `hidden`, `relative`, `z-dropdown`, `shadow-md`, `cursor-pointer`
+
+## الترخيص
+
+MIT

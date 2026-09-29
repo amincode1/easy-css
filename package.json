@@ -1,8 +1,25 @@
 {
-  "name": "easy-css",
+  "name": "@x-app/easy-css",
   "version": "1.0.0",
-  "description": "A lightweight SCSS-based utility-first CSS library.",
-  "main": "src/index.scss",
+  "description": "A lightweight, customizable SCSS utility library with responsive classes.",
+  "main": "./dist/easy-css.css",
+  "style": "./dist/easy-css.css",
+  "sass": "./src/index.scss",
+  "exports": {
+    ".": {
+      "sass": "./src/index.scss",
+      "style": "./dist/easy-css.css",
+      "default": "./dist/easy-css.css"
+    },
+    "./src/*": "./src/*",
+    "./dist/easy-css.css": "./dist/easy-css.css"
+  },
+  "files": [
+    "src/**/*.scss",
+    "dist/easy-css.css",
+    "README.md",
+    "DOCUMENTATION.md"
+  ],
   "scripts": {
     "build": "sass src/index.scss dist/easy-css.css --style compressed",
     "watch": "sass src/index.scss dist/easy-css.css --watch"
@@ -11,7 +28,9 @@
     "css",
     "scss",
     "utility",
-    "framework"
+    "framework",
+    "nuxt",
+    "sass"
   ],
   "author": "",
   "license": "MIT",

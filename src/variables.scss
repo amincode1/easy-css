@@ -9,31 +9,50 @@ $breakpoints: (
   lg: 1024px,
   xl: 1280px,
   xxl: 1536px
-);
+) !default;
 
 // المسافات (Spacing)
 $spacing: (
   0: 0,
-  1: 4px,
-  2: 8px,
-  3: 12px,
-  4: 16px,
-  5: 20px,
-  6: 24px,
-  8: 32px,
-  10: 40px,
-  12: 48px,
-  16: 64px,
-  20: 80px,
-  24: 96px,
-  32: 128px,
+  5: 5px,
+  10: 10px,
+  12: 12px,
+  15: 15px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  25: 25px,
+  30: 30px,
+  35: 35px,
+  40: 40px,
+  45: 45px,
+  50: 50px,
+  55: 55px,
+  60: 60px,
+  65: 65px,
+  70: 70px,
+  75: 75px,
+  80: 80px,
+  85: 85px,
+  90: 90px,
+  95: 95px,
+  100: 100px,
+  110: 110px,
+  120: 120px,
+  130: 130px,
+  140: 140px,
+  150: 150px,
   auto: auto
-);
+) !default;
 
 // الأحجام (Sizing)
 $sizes: (
   0: 0,
   25: 25px,
+  30: 30px,
+  35: 35px,
+  40: 40px,
+  45: 45px,
   50: 50px,
   70: 70px,
   100: 100px,
@@ -51,9 +70,9 @@ $sizes: (
   1000: 1000px,
   auto: auto,
   full: 100%,
-  screen: 100vh,
+  screen: var(--app-viewport-height, 100svh),
   fit: fit-content
-);
+) !default;
 
 // ألوان الخطوط والبوردر (Colors)
 $colors: (
@@ -61,11 +80,11 @@ $colors: (
   "current": currentColor,
   "white": #ffffff,
   "black": #000000,
-  "primary": #3b82f6,
+  "primary": #3060b4,
   "secondary": #64748b,
-  "success": #22c55e,
-  "danger": #ef4444,
-  "warning": #f59e0b,
+  "success": #00b342,
+  "danger": #df1c1c,
+  "warning": #ad6d00,
   "info": #0ea5e9,
   "dark": #1e293b,
   "light": #f8fafc,
@@ -74,12 +93,12 @@ $colors: (
   "gray-200": #e5e7eb,
   "gray-300": #d1d5db,
   "gray-400": #9ca3af,
-  "gray-500": #6b7280,
+  "gray-500": var(--theme-text-secondary),
   "gray-600": #4b5563,
-  "gray-700": #374151,
-  "gray-800": #1f2937,
-  "gray-900": #111827
-);
+  "gray-700": var(--theme-border),
+  "gray-800": var(--theme-surface),
+  "gray-900": var(--theme-page-bg)
+) !default;
 
 // أحجام الخطوط (Font Sizes)
 $font-sizes: (
@@ -109,7 +128,7 @@ $font-sizes: (
   64: 64px,
   72: 72px,
   80: 80px
-);
+) !default;
 
 // أوزان الخطوط (Font Weights)
 $font-weights: (
@@ -124,7 +143,7 @@ $font-weights: (
   900: 900,
   normal: 400,
   bold: 700
-);
+) !default;
 
 // أنصاف القطر (Border Radius)
 $border-radius: (
@@ -139,8 +158,9 @@ $border-radius: (
   20: 20px,
   24: 24px,
   30: 30px,
+  50: 50%,
   full: 9999px
-);
+) !default;
 
 // الظلال (Box Shadows)
 $shadows: (
@@ -150,7 +170,7 @@ $shadows: (
   lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
   xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
   xxl: 0 25px 50px -12px rgb(0 0 0 / 0.25)
-);
+) !default;
 
 // Z-Index
 $z-index: (
@@ -160,8 +180,12 @@ $z-index: (
   30: 30,
   40: 40,
   50: 50,
+  /** قوائم منسدلة فوق الشرائط والبطاقات المجاورة، وأسفل طبقة المودالات */
+  'dropdown': 5100,
+  'overlay-backdrop': 9980,
+  'overlay-panel': 9990,
   auto: auto
-);
+) !default;
 
 // Opacity
 $opacity: (
@@ -170,4 +194,4 @@ $opacity: (
   50: 0.5,
   75: 0.75,
   100: 1
-);
+) !default;
